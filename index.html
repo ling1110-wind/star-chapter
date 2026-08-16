@@ -591,7 +591,12 @@
       list-style: none;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      max-width: 55vw;
+      max-width: 45vw;
+    }
+    @media (max-width: 480px) {
+      .nav-brand span { display: none; }
+      .nav-avatar { width: 36px; height: 36px; font-size: 1rem; }
+      .nav-links { max-width: 50vw; }
     }
     .nav-links::-webkit-scrollbar { display: none; }
     .nav-links a {
@@ -1304,6 +1309,8 @@
       border-radius: var(--radius-lg);
       padding: 1.5rem;
       width: 100%; max-width: 360px;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
       box-shadow: var(--shadow-2xl);
       border: 1px solid var(--border-light);
       transform: translateY(16px) scale(0.97);
@@ -2569,7 +2576,7 @@
           'hero.hello':'你好呀','hero.iam':'我是','hero.subtitle':'慢热但长情的文艺追寻者 · 在羽毛球与铁片之间寻找节奏与力量',
           'hero.btn.detail':'📑 下载简历','hero.btn.contact':'📮 联系我','hero.btn.pdf':'📄 导出PDF','hero.btn.share':'🔗 分享',
           'stat.years':'年专业学习','stat.certs':'AI相关证书','stat.projects':'实验/项目经历','stat.badminton':'羽毛球相关亮点','stat.literary':'文艺创作亮点',
-          'btn.print':'🖨️ 打印','btn.theme':'🎨 主题','btn.share':'🔗 分享','btn.i18n':'EN',
+          'btn.print':'🖨️ 打印','btn.theme':'🎨 主题','btn.share':'🔗','btn.i18n':'EN',
           'awards.summary':'获奖与证书摘要 · 全部证书见下方网格',
           'contact.copyEmail':'📧 复制邮箱','contact.copyWechat':'💬 复制微信','contact.copyPhone':'📱 复制手机号',
           'share.title':'🔗 分享我的主页','share.sub':'扫码访问，或复制链接发给朋友','share.qr.loading':'二维码加载中…','share.copy':'📋 复制链接','share.save':'💾 保存二维码',
@@ -2596,7 +2603,7 @@
           'hero.hello':'Hi there','hero.iam':"I'm",'hero.subtitle':'Slow-to-warm-but-loyal artistic soul · balancing shuttlecocks and steel',
           'hero.btn.detail':'📄 Download','hero.btn.contact':'📮 Contact','hero.btn.pdf':'📄 Export PDF','hero.btn.share':'🔗 Share',
           'stat.years':'yr study','stat.certs':'AI certs','stat.projects':'Projects','stat.badminton':'Badminton highlights','stat.literary':'Literary works',
-          'btn.print':'🖨️ Print','btn.theme':'🎨 Theme','btn.share':'🔗 Share','btn.i18n':'中',
+          'btn.print':'🖨️ Print','btn.theme':'🎨 Theme','btn.share':'🔗','btn.i18n':'中',
           'awards.summary':'Awards & Certificates Summary · scroll down for the full grid',
           'contact.copyEmail':'📧 Copy email','contact.copyWechat':'💬 Copy WeChat','contact.copyPhone':'📱 Copy phone',
           'share.title':'🔗 Share My Page','share.sub':'Scan to visit, or copy the link to friends','share.qr.loading':'Generating QR…','share.copy':'📋 Copy Link','share.save':'💾 Save QR','share.ok_copy':'✅ Link copied','share.ok_save':'✅ QR saved','share.err_qr':'⚠️ QR failed, please screenshot',
