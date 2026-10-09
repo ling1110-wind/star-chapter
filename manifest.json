@@ -1,0 +1,55 @@
+{
+  "name": "赵恩瑞 · 个人主页",
+  "short_name": "赵恩瑞",
+  "description": "赵恩瑞的个人简历与主页 — 中北大学 · 特种能源 · AI工程师 · 文艺追寻者",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1714",
+  "theme_color": "#2f5d4a",
+  "categories": ["personal", "productivity", "education"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='96' fill='%232f5d4a'/><text x='50%25' y='54%25' font-size='280' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,Segoe UI,Apple Color Emoji'>👤</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "技能矩阵",
+      "short_name": "技能",
+      "description": "查看技能矩阵与熟练程度",
+      "url": "./index.html#skills",
+      "icons": [{
+        "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='.9em' font-size='80'>🧰</text></svg>",
+        "sizes": "96x96"
+      }]
+    },
+    {
+      "name": "获奖证书",
+      "short_name": "证书",
+      "description": "浏览全部获奖与证书",
+      "url": "./index.html#awards",
+      "icons": [{
+        "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='.9em' font-size='80'>🏅</text></svg>",
+        "sizes": "96x96"
+      }]
+    },
+    {
+      "name": "联系方式",
+      "short_name": "联系",
+      "description": "邮箱/电话/回到顶部",
+      "url": "./index.html#contact",
+      "icons": [{
+        "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='.9em' font-size='80'>📞</text></svg>",
+        "sizes": "96x96"
+      }]
+    }
+  ]
+}

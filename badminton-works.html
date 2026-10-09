@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羽毛球作品 | 伶</title>
+<style>
+  :root {
+    --primary: hsl(145, 38%, 30%);
+    --primary-soft: hsla(145, 38%, 30%, 0.1);
+    --primary-soft2: hsla(145, 38%, 30%, 0.2);
+    --accent: hsl(28, 42%, 42%);
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --text-on-primary: #fff;
+    --card-bg-mood: hsla(0, 0%, 100%, 0.72);
+    --gradient-card: linear-gradient(var(--card-bg-mood));
+    --radius: 16px;
+    --radius-full: 999px;
+    --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --bg: #f5f1e8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-image:
+      radial-gradient(ellipse at top, rgba(47,93,74,0.08), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(139,106,62,0.06), transparent 50%);
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+  h1 { font-family: var(--font-serif); font-size: 2rem; color: var(--primary); }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .work-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1px solid rgb(255 255 255 / 15%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .work-icon { font-size: 2.2rem; }
+  .work-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+  .work-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .work-tags span {
+    padding: 0.25rem 0.7rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .work-result { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: auto; }
+  .work-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.05);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h1>🏸 羽毛球作品</h1>
+    <a href="index.html#skills" class="back-btn">← 返回主页</a>
+  </div>
+  <div class="works-grid">
+    <div class="work-card">
+      <div class="work-icon">🏆</div>
+      <div class="work-name">校级羽毛球比赛</div>
+      <p class="work-desc">参加校级羽毛球男单比赛，经过多轮淘汰赛，最终进入前 8 名。比赛中运用拉吊结合突击战术，网前搓放细腻。</p>
+      <div class="work-tags"><span>男单</span><span>校级前8</span><span>拉吊突击</span></div>
+      <div class="work-result">🥈 校级比赛前 8 名</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">🎯</div>
+      <div class="work-name">男双搭档训练</div>
+      <p class="work-desc">与固定搭档进行男双系统训练，重点提升网前轮转、后场杀球与防守反击的配合默契。</p>
+      <div class="work-tags"><span>男双</span><span>网前轮转</span><span>防守反击</span></div>
+      <div class="work-result">✅ 配合默契度显著提升</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">📹</div>
+      <div class="work-name">技术动作视频分析</div>
+      <p class="work-desc">录制训练比赛视频，逐帧分析高远球、杀球、网前搓球等技术动作，针对性纠正发力与步伐问题。</p>
+      <div class="work-tags"><span>视频分析</span><span>技术纠正</span><span>步伐优化</span></div>
+      <div class="work-result">📊 动作规范度提升</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目作品 | 伶</title>
+<style>
+  :root {
+    --primary: hsl(145, 38%, 30%);
+    --primary-soft: hsla(145, 38%, 30%, 0.1);
+    --primary-soft2: hsla(145, 38%, 30%, 0.2);
+    --accent: hsl(28, 42%, 42%);
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --text-on-primary: #fff;
+    --card-bg-mood: hsla(0, 0%, 100%, 0.72);
+    --gradient-card: linear-gradient(var(--card-bg-mood));
+    --radius: 16px;
+    --radius-full: 999px;
+    --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --bg: #f5f1e8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-image:
+      radial-gradient(ellipse at top, rgba(47,93,74,0.08), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(139,106,62,0.06), transparent 50%);
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--primary);
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  /* BorderGlow card */
+  .border-glow-card {
+    --edge-proximity: 0;
+    --cursor-angle: 45deg;
+    --edge-sensitivity: 30;
+    --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+    --border-radius: 16px;
+    --glow-padding: 20px;
+    --cone-spread: 25;
+    --fill-opacity: 0.5;
+    position: relative;
+    border-radius: var(--border-radius);
+    isolation: isolate;
+    transform: translate3d(0,0,0.01px);
+    display: grid;
+    border: 1px solid rgb(255 255 255 / 15%);
+    background: var(--gradient-card);
+    overflow: visible;
+    box-shadow: rgba(0,0,0,0.1) 0px 1px 2px, rgba(0,0,0,0.1) 0px 2px 4px, rgba(0,0,0,0.1) 0px 4px 8px, rgba(0,0,0,0.1) 0px 8px 16px, rgba(0,0,0,0.1) 0px 16px 32px, rgba(0,0,0,0.1) 0px 32px 64px;
+  }
+  .border-glow-card::before, .border-glow-card::after, .border-glow-card > .bg-edge-light {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    transition: opacity 0.25s ease-out; z-index: -1; pointer-events: none;
+  }
+  .border-glow-card:not(:hover)::before, .border-glow-card:not(:hover)::after, .border-glow-card:not(:hover) > .bg-edge-light {
+    opacity: 0; transition: opacity 0.75s ease-in-out;
+  }
+  .border-glow-card::before {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gradient-card) 0 100%) padding-box,
+      radial-gradient(at 80% 55%, #c084fc 0px, transparent 50%) border-box,
+      radial-gradient(at 69% 34%, #f472b6 0px, transparent 50%) border-box,
+      radial-gradient(at 8% 6%, #38bdf8 0px, transparent 50%) border-box,
+      radial-gradient(at 41% 38%, #a78bfa 0px, transparent 50%) border-box,
+      radial-gradient(at 86% 85%, #22d3ee 0px, transparent 50%) border-box,
+      radial-gradient(at 82% 18%, #fbbf24 0px, transparent 50%) border-box,
+      radial-gradient(at 51% 4%, #fb7185 0px, transparent 50%) border-box;
+    opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+    -webkit-mask-image: conic-gradient(from var(--cursor-angle) at center, black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%), transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%));
+    mask-image: conic-gradient(from var(--cursor-angle) at center, black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%), transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%));
+  }
+  .border-glow-card::after {
+    border: 1px solid transparent;
+    background: radial-gradient(at 80% 55%, #c084fc 0px, transparent 50%) padding-box,
+      radial-gradient(at 69% 34%, #f472b6 0px, transparent 50%) padding-box,
+      radial-gradient(at 8% 6%, #38bdf8 0px, transparent 50%) padding-box,
+      radial-gradient(at 41% 38%, #a78bfa 0px, transparent 50%) padding-box,
+      radial-gradient(at 86% 85%, #22d3ee 0px, transparent 50%) padding-box,
+      radial-gradient(at 82% 18%, #fbbf24 0px, transparent 50%) padding-box,
+      radial-gradient(at 51% 4%, #fb7185 0px, transparent 50%) padding-box;
+    -webkit-mask-image: linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%), radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%), conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%), radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%), conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+    -webkit-mask-composite: source-over, source-over, source-over, source-over, source-over, source-over;
+    mask-composite: subtract, add, add, add, add, add;
+    opacity: calc(var(--fill-opacity) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+    mix-blend-mode: soft-light;
+  }
+  .border-glow-card > .bg-edge-light {
+    inset: calc(var(--glow-padding) * -1); z-index: 1;
+    -webkit-mask-image: conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+    mask-image: conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+    opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+    mix-blend-mode: plus-lighter;
+  }
+  .border-glow-card > .bg-edge-light::before {
+    content: ""; position: absolute; inset: var(--glow-padding); border-radius: inherit;
+    box-shadow: inset 0 0 0 1px hsl(190deg 80% 80% / 100%), inset 0 0 3px 0 hsl(190deg 80% 80% / 50%), inset 0 0 8px 0 hsl(190deg 80% 80% / 40%), inset 0 0 18px 0 hsl(190deg 80% 80% / 25%), 0 0 3px 0 hsl(190deg 80% 80% / 50%), 0 0 8px 0 hsl(190deg 80% 80% / 40%), 0 0 18px 0 hsl(190deg 80% 80% / 25%);
+  }
+  .border-glow-inner { position: relative; z-index: 2; display: flex; flex-direction: column; border-radius: inherit; overflow: hidden; }
+  .project-card {
+    background: var(--gradient-card);
+    border-radius: inherit;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: 100%;
+  }
+  .project-icon { font-size: 2.2rem; }
+  .project-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+  .project-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tech span {
+    padding: 0.25rem 0.7rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .project-result { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: auto; }
+  .project-link-btn {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-soft2);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .project-link-btn:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h1>🚀 项目作品</h1>
+    <a href="index.html#skills" class="back-btn">← 返回主页</a>
+  </div>
+  <div class="projects-grid" id="projectsGrid"></div>
+</div>
+<script>
+const projects = [
+  {
+    icon: "⚗️", name: "[能源/化学相关实验项目]",
+    tech: ["实验设计", "仪器操作", "数据分析", "安全规范"],
+    result: "[项目成果/报告/获奖]", link: "#",
+    desc: "[项目简介：课题背景、实验过程、你的贡献、最终结论]"
+  },
+  {
+    icon: "🎯", name: "[羽毛球相关项目/赛事]",
+    tech: ["团队协作", "战术分析", "体能训练", "心理素质"],
+    result: "[成绩/收获]", link: "#",
+    desc: "[项目简介：参赛背景、你的角色、比赛过程、最终收获]"
+  },
+  {
+    icon: "🎤", name: "[铁片/音乐相关项目/演出]",
+    tech: ["节奏把控", "团队配合", "舞台表现", "情感表达"],
+    result: "[演出成果/反响]", link: "#",
+    desc: "[项目简介：演出背景、你的角色、排练故事、演出体验]"
+  }
+];
+function pickF(o, k){ return o[k] || o[k+'En'] || ''; }
+function pickArr(o, k){ return o[k] || o[k+'En'] || []; }
+const grid = document.getElementById('projectsGrid');
+grid.innerHTML = projects.map(p => {
+  const tech = pickArr(p, 'tech');
+  const link = p.link || '#';
+  const hasLink = link && link !== '#';
+  return `
+  <div class="border-glow-card" data-bg-card>
+    <span class="bg-edge-light"></span>
+    <div class="border-glow-inner">
+      <div class="project-card">
+        <div class="project-icon">${p.icon}</div>
+        <div class="project-name">${pickF(p, 'name')}</div>
+        <p class="project-desc">${pickF(p, 'desc')}</p>
+        <div class="project-tech">${tech.map(t=>`<span>${t}</span>`).join('')}</div>
+        <div class="project-result">🏆 ${pickF(p, 'result')}</div>
+        ${hasLink
+          ? `<a class="project-link-btn" href="${link}" target="_blank" rel="noopener noreferrer"><span>🔗</span><span>查看项目</span></a>`
+          : `<a class="project-link-btn" href="${link}" onclick="event.preventDefault();alert('🔗 项目链接即将上线');"><span>🔗</span><span>查看项目</span></a>`
+        }
+      </div>
+    </div>
+  </div>`;
+}).join('');
+
+// BorderGlow interaction
+document.querySelectorAll('[data-bg-card]').forEach(card => {
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    const cx = r.width / 2, cy = r.height / 2;
+    const dx = x - cx, dy = y - cy;
+    let kx = Infinity, ky = Infinity;
+    if (dx !== 0) kx = cx / Math.abs(dx);
+    if (dy !== 0) ky = cy / Math.abs(dy);
+    const edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1) * 100;
+    let angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+    if (angle < 0) angle += 360;
+    card.style.setProperty('--edge-proximity', edge.toFixed(3));
+    card.style.setProperty('--cursor-angle', angle.toFixed(3) + 'deg');
+  });
+});
+</script>
+</body>
+</html>

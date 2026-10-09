@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游泳作品 | 伶</title>
+<style>
+  :root {
+    --primary: hsl(205, 50%, 32%);
+    --primary-soft: hsla(205, 50%, 32%, 0.1);
+    --primary-soft2: hsla(205, 50%, 32%, 0.2);
+    --accent: hsl(40, 85%, 55%);
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --text-on-primary: #fff;
+    --card-bg-mood: hsla(0, 0%, 100%, 0.72);
+    --gradient-card: linear-gradient(var(--card-bg-mood));
+    --radius: 16px;
+    --radius-full: 999px;
+    --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --bg: #eef5f9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-image:
+      radial-gradient(ellipse at top, rgba(40,88,123,0.1), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(95,148,187,0.08), transparent 50%);
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+  h1 { font-family: var(--font-serif); font-size: 2rem; color: var(--primary); }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .work-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1px solid rgb(255 255 255 / 15%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .work-icon { font-size: 2.2rem; }
+  .work-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+  .work-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .work-tags span {
+    padding: 0.25rem 0.7rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .work-result { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h1>🏊 游泳作品</h1>
+    <a href="index.html#skills" class="back-btn">← 返回主页</a>
+  </div>
+  <div class="works-grid">
+    <div class="work-card">
+      <div class="work-icon">💪</div>
+      <div class="work-name">千米耐力挑战</div>
+      <p class="work-desc">完成连续 1000 米不间断游泳挑战，以自由泳为主，配合蛙泳调整节奏。训练重点在于呼吸控制与配速策略。</p>
+      <div class="work-tags"><span>自由泳</span><span>1000m</span><span>耐力训练</span></div>
+      <div class="work-result">✅ 连续 1000m 不间断</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">🏊</div>
+      <div class="work-name">蛙泳技术精进</div>
+      <p class="work-desc">系统练习蛙泳的收翻蹬夹技术，优化划水路线与呼吸时机，提升滑行效率，减少水阻。</p>
+      <div class="work-tags"><span>蛙泳</span><span>收翻蹬夹</span><span>滑行效率</span></div>
+      <div class="work-result">📈 泳姿效率提升</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">🔄</div>
+      <div class="work-name">交叉训练计划</div>
+      <p class="work-desc">将游泳作为羽毛球和健身的交叉训练方式，每周安排 2-3 次游泳训练，提升心肺功能与全身协调性。</p>
+      <div class="work-tags"><span>交叉训练</span><span>心肺功能</span><span>全身协调</span></div>
+      <div class="work-result">🔁 每周 2-3 次训练</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding 作品 | 伶</title>
+<style>
+  :root {
+    --primary: hsl(262, 45%, 45%);
+    --primary-soft: hsla(262, 45%, 45%, 0.1);
+    --primary-soft2: hsla(262, 45%, 45%, 0.2);
+    --accent: hsl(330, 70%, 55%);
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --text-on-primary: #fff;
+    --card-bg-mood: hsla(0, 0%, 100%, 0.72);
+    --gradient-card: linear-gradient(var(--card-bg-mood));
+    --radius: 16px;
+    --radius-full: 999px;
+    --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --bg: #f3f0f8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-image:
+      radial-gradient(ellipse at top, rgba(124,58,237,0.08), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(236,72,153,0.06), transparent 50%);
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+  h1 { font-family: var(--font-serif); font-size: 2rem; color: var(--primary); }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .work-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1px solid rgb(255 255 255 / 15%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .work-icon { font-size: 2.2rem; }
+  .work-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+  .work-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .work-tags span {
+    padding: 0.25rem 0.7rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .work-result { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: auto; }
+  .work-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem; font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-soft2);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    align-self: flex-start;
+    transition: all 0.2s;
+  }
+  .work-link:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h1>🎨 Vibe Coding 作品</h1>
+    <a href="index.html#skills" class="back-btn">← 返回主页</a>
+  </div>
+  <div class="works-grid">
+    <div class="work-card">
+      <div class="work-icon">🌐</div>
+      <div class="work-name">个人主页网站</div>
+      <p class="work-desc">使用自然语言驱动 AI IDE 快速搭建个人主页网站，集成双语切换、PWA、3D 球幕画廊、技能卡片边框光晕等交互效果。</p>
+      <div class="work-tags"><span>AI IDE</span><span>HTML/CSS/JS</span><span>3D 交互</span><span>PWA</span></div>
+      <div class="work-result">✅ 已上线，支持中英文切换</div>
+      <a href="index.html" class="work-link">🔗 查看项目</a>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">🤖</div>
+      <div class="work-name">AI 智能体应用</div>
+      <p class="work-desc">借助大模型 API 构建智能体应用，实现自然语言对话、任务拆解与自动化执行。注重创意表达与工程落地的平衡。</p>
+      <div class="work-tags"><span>LLM</span><span>智能体</span><span>自然语言驱动</span></div>
+      <div class="work-result">🚧 原型开发中</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">⚡</div>
+      <div class="work-name">快速原型工具集</div>
+      <p class="work-desc">用 AI 辅助编程快速生成各类小工具原型，包括数据处理脚本、自动化任务、可视化页面等，把灵感转化为可运行代码。</p>
+      <div class="work-tags"><span>快速原型</span><span>自动化</span><span>创意实现</span></div>
+      <div class="work-result">📦 多个原型已落地</div>
+    </div>
+    <div class="work-card">
+      <div class="work-icon">✈️</div>
+      <div class="work-name">飞机大战</div>
+      <p class="work-desc">经典飞机大战射击游戏，玩家操控飞机躲避敌机并发射子弹消灭敌人，包含计分系统、生命值、关卡难度递增等玩法。</p>
+      <div class="work-tags"><span>游戏开发</span><span>Canvas</span><span>JavaScript</span><span>AI 辅助</span></div>
+      <div class="work-result">✅ 已上线可玩</div>
+      <a href="https://singular-cocada-97a331.netlify.app/" target="_blank" rel="noopener" class="work-link">🔗 立即游玩</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
