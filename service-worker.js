@@ -6,7 +6,7 @@
      3) 图片：cache-first（图片不变）
      4) 跨域 CDN：network-first + 超时回退缓存
    ====================================================== */
-const VERSION = 'v1.0.0';
+const VERSION = 'v1.0.1';
 const STATIC_CACHE = `static-${VERSION}`;
 const IMAGE_CACHE = `image-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
@@ -47,6 +47,7 @@ self.addEventListener('fetch', (event) => {
   if (req.destination === 'image') {
     event.respondWith(
       caches.match(req).then((cached) => cached || fetch(req).then((res) => {
+        if (!res.ok) return res;
         const copy = res.clone();
         caches.open(IMAGE_CACHE).then((c) => c.put(req, copy)).catch(() => {});
         return res;
